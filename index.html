@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment5: 3D Bar Chart</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://x3dom.org/download/dev/x3dom-full.js"></script>
+<!--    <link rel="stylesheet" href="https://x3dom.org/download/dev/x3dom.css" />-->
+    <script src="https://raw.githack.com/jamesleesaunders/d3-x3d/master/dist/d3-x3d.js"></script>
+</head>
+<style>
+   body {
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+</style>
+<body>
+  <h1>A simple example of 3D Bar Chart</h1></h1>
+  <div id="chartholder"></div>
+
+  <script>
+    // Select chartholder
+    var chartHolder = d3.select("#chartholder");
+
+    // Generate some data
+    var myData = d3.x3d.randomData.dataset2();
+    console.log(myData)
+
+    // Declare the chart component
+    var myChart = d3.x3d.chart.barChartMultiSeries();
+
+    // Attach chart and data to the chartholder
+    chartHolder.datum(myData).call(myChart);
+
+  </script>
+</body>
+</html>
